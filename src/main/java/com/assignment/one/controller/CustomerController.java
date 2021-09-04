@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.assignment.one.Customer.Customer;
+import com.assignment.one.Entities.Customer;
 import com.assignment.one.repo.CustomerDao;
 import com.assignment.one.service.CustomerService;
 
@@ -38,7 +38,11 @@ public class CustomerController {
 	public ResponseEntity<List<Customer>> getCustomer(){
 		List<Customer> customers=customerservice.getCustomer();
 		 return   ResponseEntity.ok(customers);
+		 }
+	@GetMapping("/")
+	public String admin(){
 		
+		 return "<h1>welcome to Admin page</h1>";
 	}
 	
 	@GetMapping("/{id}")
